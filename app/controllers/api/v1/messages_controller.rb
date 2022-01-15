@@ -5,9 +5,11 @@ class Api::V1::MessagesController < ApplicationController
   def messages_random
     @messages = Message.all
 
-    random = rand(0..4)
+    @random = @messages[rand(0..(@messages.count-1))]
 
-    render json: @messages[random]
+    render json: { :greetings => [
+      :name => @random,
+      ] }.to_json
   end
 
 
