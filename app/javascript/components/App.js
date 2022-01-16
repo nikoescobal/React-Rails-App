@@ -2,6 +2,7 @@ import React from "react";
 import PropTypes from "prop-types";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 import Greeting from "./Greeting";
+import Poop from "./Poop";
 
 class App extends React.Component {
   render() {
@@ -9,6 +10,7 @@ class App extends React.Component {
       <BrowserRouter>
         <Routes>
           <Route exact path='/' element={<Greeting />} />
+          <Route path='/poop' element={<Poop />} />
         </Routes>
       </BrowserRouter>
     );
