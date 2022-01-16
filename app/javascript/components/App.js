@@ -1,21 +1,21 @@
 import React from "react";
-import { Provider } from "react-redux";
-import Greeting from "./Greeting";
-import store from "../store";
+import PropTypes from "prop-types";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
+import Greeting from "./Greeting";
 
-const Main = () => {
-  return (
-    <React.StrictMode>
-      <Provider store={store}>
-        <BrowserRouter>
-          <Routes>
-            <Route exact path='/' element={<Greeting />}></Route>
-          </Routes>
-        </BrowserRouter>
-      </Provider>
-    </React.StrictMode>
-  );
+class App extends React.Component {
+  render() {
+    return (
+      <BrowserRouter>
+        <Routes>
+          <Route exact path='/' element={<Greeting />} />
+        </Routes>
+      </BrowserRouter>
+    );
+  }
+}
+
+App.propTypes = {
+  greeting: PropTypes.string,
 };
-
-export default Main;
+export default App;
