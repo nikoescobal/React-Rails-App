@@ -5,11 +5,10 @@ class Api::V1::MessagesController < ApplicationController
   def messages_random
     @messages = Message.all
 
-    @random = @messages[rand(0..(@messages.count-1))]
+    @random = @messages[rand(0..(@messages.count - 1))]
 
     render json: @random
   end
-
 
   # GET /messages
   def index
@@ -25,7 +24,7 @@ class Api::V1::MessagesController < ApplicationController
 
   # POST /messages
   def create
-    @Message = Message.new(message_params)
+    @message = Message.new(message_params)
 
     if @Message.save
       render json: @Message, status: :created, location: @Message
@@ -52,7 +51,7 @@ class Api::V1::MessagesController < ApplicationController
 
   # Use callbacks to share common setup or constraints between actions.
   def set_message
-    @Message = Message.find(params[:id])
+    @message = Message.find(params[:id])
   end
 
   # Only allow a list of trusted parameters through.
