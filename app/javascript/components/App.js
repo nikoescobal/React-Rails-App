@@ -1,8 +1,8 @@
 import React from "react";
 import PropTypes from "prop-types";
+import { Provider } from "react-redux";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 import Greeting from "./Greeting";
-import Poop from "./Poop";
 import configureStore from "../configureStore";
 const store = configureStore();
 
@@ -13,7 +13,6 @@ class App extends React.Component {
         <BrowserRouter>
           <Routes>
             <Route exact path='/random' element={<Greeting text='hi' />} />
-            <Route path='/poop' element={<Poop />} />
           </Routes>
         </BrowserRouter>
       </Provider>

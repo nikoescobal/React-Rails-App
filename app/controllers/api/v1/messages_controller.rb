@@ -7,9 +7,7 @@ class Api::V1::MessagesController < ApplicationController
 
     @random = @messages[rand(0..(@messages.count-1))]
 
-    render json: { :greetings => [
-      :name => @random,
-      ] }.to_json
+    render json: @random
   end
 
 
