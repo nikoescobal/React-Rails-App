@@ -9,7 +9,7 @@ import {
 } from "./components/Greeting";
 
 const initialState = {
-  msg: { text: "Hello" },
+  msg: { text: "hello" },
 };
 
 const rootReducer = (state = initialState, action) => {
